@@ -15,10 +15,18 @@ import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 
+
+import { FriendProvider } from './Components/FriendContext' 
+import { Toaster } from 'react-hot-toast'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter> 
-      <App />
+    <BrowserRouter>
+      <FriendProvider>
+      
+        <Toaster position="top-center" reverseOrder={false} />
+        <App />
+      </FriendProvider>
     </BrowserRouter>
   </React.StrictMode>,
 )

@@ -1,8 +1,14 @@
 import { useParams, Link } from "react-router-dom";
 import friendsData from "../Data/Friend.json";
 
+// new lines add functionality er jonno
+import { useFriends } from "./FriendContext"; 
+import toast from "react-hot-toast";
+
 const FriendDetails = () => {
   const { id } = useParams();
+//   new
+  const { addTimelineEntry } = useFriends(); 
   
 //   url to id
 
@@ -16,6 +22,35 @@ const FriendDetails = () => {
       </div>
     );
   }
+
+//   new
+  const handleCheckIn = (type) => {
+    const icons = { Call: "fa-solid fa-phone", Text: "fa-regular fa-comment-dots", Video: "fa-solid fa-video" };
+    const displayIcons = { Call: "📞", Text: "💬", Video: "📹" };
+
+    const newEntry = {
+      id: Date.now(),
+      type: type,
+      with: friend.name,
+      date: new Date().toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      }),
+      icon: displayIcons[type],
+    };
+
+    addTimelineEntry(newEntry);
+    
+    toast.success(`${type} with ${friend.name} logged!`, {
+      style: {
+        borderRadius: "10px",
+        background: "#1D3E31",
+        color: "#fff",
+        fontSize: "14px",
+      },
+    });
+  };
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
@@ -112,15 +147,27 @@ const FriendDetails = () => {
           <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
             <h4 className="font-bold text-[#1D3E31] mb-6">Quick Check-In</h4>
             <div className="grid grid-cols-3 gap-4">
-              <button className="flex flex-col items-center gap-3 py-8 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-all">
+              
+
+              {/* onclick event add kori */}
+              <button 
+                onClick={() => handleCheckIn('Call')}
+                className="flex flex-col items-center gap-3 py-8 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-all"
+              >
                 <i className="fa-solid fa-phone text-xl text-gray-700"></i>
                 <span className="text-xs font-bold text-gray-600 uppercase">Call</span>
               </button>
-              <button className="flex flex-col items-center gap-3 py-8 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-all">
+              <button 
+                onClick={() => handleCheckIn('Text')}
+                className="flex flex-col items-center gap-3 py-8 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-all"
+              >
                 <i className="fa-regular fa-comment-dots text-xl text-gray-700"></i>
                 <span className="text-xs font-bold text-gray-600 uppercase">Text</span>
               </button>
-              <button className="flex flex-col items-center gap-3 py-8 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-all">
+              <button 
+                onClick={() => handleCheckIn('Video')}
+                className="flex flex-col items-center gap-3 py-8 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-all"
+              >
                 <i className="fa-solid fa-video text-xl text-gray-700"></i>
                 <span className="text-xs font-bold text-gray-600 uppercase">Video</span>
               </button>

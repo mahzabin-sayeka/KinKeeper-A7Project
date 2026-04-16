@@ -6,6 +6,8 @@ import FriendCard from "./Components/FriendCard";
 import FriendDetails from "./Components/FriendDetails";
 import Footer from "./Components/Footer";
 
+import Timeline from "./Components/Timeline"; 
+
 function App() {
   return (
     <div className="min-h-screen flex flex-col font-sans">
@@ -20,6 +22,10 @@ function App() {
             </>
           } />
           <Route path="/friend/:id" element={<FriendDetails />} />
+          
+          {/* Timeline route new */}
+          <Route path="/timeline" element={<Timeline />} />
+          
         </Routes>
       </div>
       <Footer></Footer>
