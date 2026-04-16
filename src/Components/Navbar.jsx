@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="drawer-content">
         <nav className="bg-white border-b flex justify-between items-center px-6 md:px-12 py-4">
           
-    {/* left side logo  */}
+   {/* left side logo  */}
           <div className="logo-part">
             <h1 className="text-xl md:text-2xl font-black">
               <span className="text-black">Keen</span>

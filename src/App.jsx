@@ -1,15 +1,20 @@
-import Navbar from './components/Navbar'
+import Navbar from "./components/Navbar";
+import BannerSection from "./components/BannerSection";
+import StatCards from "./components/StatCards"; // Import korla
 
 function App() {
   return (
-    <div className="bg-[#FDFCFE] min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      
-      <main className="max-w-7xl mx-auto px-4 md:px-12 py-8">
+
+      {/* Background color eikhane  */}
+      <div className="flex-grow bg-[#F8F9FA]">
         
-      </main>
+        <BannerSection />
+        <StatCards /> 
+      </div>
     </div>
-  )
+  );
 }
 
 export default App
