@@ -4,6 +4,7 @@ import BannerSection from "./components/BannerSection";
 import StatCards from "./components/StatCards";
 import FriendCard from "./Components/FriendCard";
 import FriendDetails from "./Components/FriendDetails";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/friend/:id" element={<FriendDetails />} />
         </Routes>
       </div>
+      <Footer></Footer>
     </div>
   );
 }
