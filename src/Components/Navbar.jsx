@@ -47,10 +47,22 @@ const Navbar = () => {
               </Link>
               
               {/* Stats Link */}
-              <button className="flex items-center gap-2 px-4 py-2 text-gray-500 hover:bg-gray-50 h-10">
+              {/* <button className="flex items-center gap-2 px-4 py-2 text-gray-500 hover:bg-gray-50 h-10">
                 <i className="fa-solid fa-chart-line"></i>
                 <span className="text-sm font-medium">Stats</span>
-              </button>
+              </button> */}
+            
+             <Link 
+               to="/stats" 
+                className={`flex items-center gap-2 px-4 py-2 rounded-md h-10 transition-all font-bold ${
+               location.pathname === "/stats" 
+                ? "bg-[#1D3E31] text-white shadow-sm" // ক্লিক করলে এই কালার হবে
+                 : "text-gray-500 hover:bg-gray-50"
+               }`}
+              >
+              <i className="fa-solid fa-chart-line"></i>
+               <span className="text-sm font-medium">Stats</span>
+            </Link>
             </div>
 
             {/* Mobile device eer jonno Icon */}

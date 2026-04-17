@@ -2,7 +2,7 @@ const StatCards = () => {
 
   const stats = {
     total: 10,
-    onTrack: 3,
+    onTrack: 4,
     attention: 6,
     interactions: 12
   };
