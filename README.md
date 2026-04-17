@@ -1,16 +1,20 @@
-# React + Vite
+# 🛡️ KeenKeeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## What is KeenKeeper?
+Honestly, we all have those moments where we realize it’s been ages since we last called a friend. I built KeenKeeper to fix that. It’s a simple, personal space where I can keep track of my social life. It works like a digital logbook for friendships—whenever I text, call, or have a video chat with someone, I just log it here. It’s not just about keeping a list; it’s about seeing how well I’m staying connected through some cool visual charts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+## 💻 The Tech Behind It
+    I wanted this project to be fast and look sharp, so I went with React using Vite. For the styling, I stuck with Tailwind CSS because it let me build a clean, professional UI without getting lost in huge CSS files. And this project is fully responsive for any kind of device.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+    One of the most interesting parts was using Recharts. I didn't want the stats to be just boring numbers, so I integrated these interactive donut charts that actually look like a professional dashboard. For navigation, I used React Router, and I handled all the data sharing across the app using the Context API so everything stays in sync without any lag.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Top 3 key Features I Built
+
+   ### Quick Interaction Logs: I made it super easy to "check-in" with friends. If you're on a friend's profile and you just gave them a call, you can hit a button and it immediately records that activity. It's live and updates the whole app instantly.
+
+   ### Filtering through the Timeline: The timeline can get crowded if you’re active, so I added a filtering feature. I put a dropdown box right under the heading so you can sort the list. If you only want to see your "Calls" or just your "Messages," you just pick it from the list and the UI cleans itself up immediately.
+
+   ### Visual Friendship Stats: This is my favorite part. I built a Stats page where all those logs turn into a visual breakdown. It shows a donut chart of your calls vs texts vs video chats. I even added a hover effect, so when you move your mouse over the chart, it shows you the exact counts. It gives a really professional feel to the whole experience.
