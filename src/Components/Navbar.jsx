@@ -91,7 +91,11 @@ const Navbar = () => {
               <i className="fa-regular fa-clock"></i> Timeline
             </Link>
           </li>
-          <li><a className="text-gray-600 py-3"><i className="fa-solid fa-chart-line"></i> Stats</a></li>
+          <li>
+      <Link to="/stats" className={`mb-2 py-3 font-bold ${location.pathname === "/stats" ? "bg-[#1D3E31] text-white" : "text-gray-600"}`}>
+        <i className="fa-solid fa-chart-line"></i> Stats
+      </Link>
+    </li>
         </ul>
       </div>
     </div>
