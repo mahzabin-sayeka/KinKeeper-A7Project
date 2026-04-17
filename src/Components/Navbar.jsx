@@ -56,7 +56,7 @@ const Navbar = () => {
                to="/stats" 
                 className={`flex items-center gap-2 px-4 py-2 rounded-md h-10 transition-all font-bold ${
                location.pathname === "/stats" 
-                ? "bg-[#1D3E31] text-white shadow-sm" // ক্লিক করলে এই কালার হবে
+                ? "bg-[#1D3E31] text-white shadow-sm" 
                  : "text-gray-500 hover:bg-gray-50"
                }`}
               >

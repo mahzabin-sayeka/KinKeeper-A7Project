@@ -1,5 +1,5 @@
 import { useFriends } from "./FriendContext";
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts"; // Tooltip ইমপোর্ট করুন
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts"; 
 
 const Stats = () => {
   const { timeline } = useFriends();
@@ -37,10 +37,16 @@ const Stats = () => {
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
-              {/* Hover করার সময় যা দেখাবে */}
+              
+              
               <Tooltip 
-                contentStyle={{ borderRadius: "12px", border: "none", boxShadow: "0 4px 12px rgba(0,0,0,0.1)" }}
+                contentStyle={{ 
+                  borderRadius: "12px", 
+                  border: "none", 
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.1)" 
+                }} 
               />
+              
               <Legend iconType="circle" layout="horizontal" verticalAlign="bottom" align="center" />
             </PieChart>
           </ResponsiveContainer>
